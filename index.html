@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Probando Plugins Grids</title>
+	<style src="css/main.css"></style>
+</head>
+<body>
+	<section id="wrapper-grid">
+		<div class="element red"></div>
+		<div class="element blue"></div>
+		<div class="element yellow"></div>
+		<div class="element orange"></div>
+		<div class="element green"></div>
+		<div class="element black"></div>
+	</section>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/jquery.grids.min.js"></script>
+	<script>
+		$(document).on('ready', function(){
+			$('#wrapper-grid').grids({
+				el 			: '.element',
+				columns 	: 3,
+				rows    	: 2,
+				resize 		: true,
+				responsive	: [{
+						breakPoint 	: 768,
+						columns	   	: 2,
+						rows		: 3
+					},
+					{
+						breakPoint 	: 480,
+						columns		: 1,
+						rows		: 6
+					}
+				]
+			});
+		});
+	</script>
+</body>
+</html>
